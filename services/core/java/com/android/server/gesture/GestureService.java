@@ -16,7 +16,6 @@
 package com.android.server.gesture;
 
 import android.Manifest;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.os.Binder;
 import android.os.IBinder;
@@ -51,13 +50,5 @@ public class GestureService extends IGestureService.Stub {
         if (DEBUG) Slog.d(TAG, "Starting Gesture Sensor service");
         mInputFilter = new GestureInputFilter(mContext);
         mInputManager.registerSecondaryInputFilter(mInputFilter);
-    }
-
-    public void setOnLongPressPendingIntent(PendingIntent pendingIntent) {
-        mInputFilter.setOnLongPressPendingIntent(pendingIntent);
-    }
-
-    public void setOnDoubleClickPendingIntent(PendingIntent pendingIntent) {
-        mInputFilter.setOnDoubleClickPendingIntent(pendingIntent);
     }
 }

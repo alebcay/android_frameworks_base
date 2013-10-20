@@ -5985,7 +5985,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             try {
                 // The device only should consume known keys.
                 if (mDeviceKeyHandler.handleKeyEvent(event)) {
-                    return 0;
+                    return -1;
                 }
             } catch (Exception e) {
                 Slog.w(TAG, "Could not dispatch event to device key handler", e);
